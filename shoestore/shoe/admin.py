@@ -10,11 +10,5 @@ class ShoeSizeInline(admin.TabularInline):
 @admin.register(Shoe)
 class ShoeAdmin(admin.ModelAdmin):
     list_display = ["name", "brand", "price"]
-    search_fields = ["name", "brand__name"]
+    search_fields = ["name", "brand_name"]
     inlines = [ShoeSizeInline]
-
-
-@admin.register(ShoeSize)
-class ShoeSizeAdmin(admin.ModelAdmin):
-    list_display = ["shoe", "size", "stock"]
-    search_fields = ["shoe__name"]
